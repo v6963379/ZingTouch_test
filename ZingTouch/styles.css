@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+section {
+    padding: 100px 0;
+}
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.main-content {
+    width: 770px;
+    
+}
+
+.gesture-area {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+.log-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gesture-log {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#download-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#analyze-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.analysis-result {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
+}
+
+#analysis-content {
+    line-height: 1.5;
+}
+
+.stat-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.stat-group h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.stat-item {
+    margin-left: 15px;
+    color: #666;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        margin: 0;
+        min-height: 100vh;
+        /* Предотвращаем горизонтальную прокрутку */
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1170px;
+        padding: 0 15px;
+        margin: 0 auto;
+        /* width: 100%; */
+    }
+.wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+    .main-content {
+        width: 100%;
+        order: 2; /* Перемещаем основной контент вниз */
+    }
+
+    .analysis-result {
+        width: auto;
+        position: static;
+        order: 1; /* Перемещаем анализ вверх */
+        margin: 0;
+        padding: 10px;
+    }
+
+    .gesture-area {
+        height: 200px;
+        margin: 10px 0;
+        width: calc(100% - 4px); /* Учитываем border */
+    }
+
+    .gesture-log {
+        max-height: 150px;
+        margin: 10px 0;
+        width: calc(100% - 30px); /* Учитываем padding */
+    }
+
+    .buttons {
+        flex-direction: row; /* Возвращаем кнопки в ряд */
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    button {
+        flex: 1; /* Кнопки занимают равное пространство */
+        padding: 12px 0;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Исправляем отображение текста */
+    h3 {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    /* Улучшаем читаемость контента */
+    #log-content, 
+    #analysis-content {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* Специфичные стили для iPhone */
+@media screen and (max-width: 428px) { /* iPhone 13 width */
+    body {
+        padding: 5px;
+    }
+
+    .gesture-area {
+        height: 180px;
+    }
+
+    .buttons {
+        padding: 0 5px;
+    }
+
+    button {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+
+    .stat-group {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    .stat-item {
+        margin-left: 8px;
+        font-size: 13px;
+    }
+}
+
+/* Безопасная зона для iPhone с челкой */
+@supports (padding-top: env(safe-area-inset-top)) {
+    body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+} 

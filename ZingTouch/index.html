@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>ZingTouch Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="main-title">ZingTouch Demo</h1>
+        <div class="wrap">
+          <div class="main-content">
+            <div id="gesture-area" class="gesture-area">
+              <p>Область для жестов</p>
+            </div>
+
+            <div class="log-section">
+              <div id="gesture-log" class="gesture-log">
+                <h3>Лог жестов:</h3>
+                <div id="log-content"></div>
+              </div>
+
+              <div class="buttons">
+                <button id="download-btn">Скачать данные</button>
+                <button id="analyze-btn">Анализировать действия</button>
+                <button id="clear-btn">Очистить данные</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="analysis-result" class="analysis-result">
+            <h3>Анализ действий:</h3>
+            <div id="analysis-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
